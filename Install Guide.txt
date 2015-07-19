@@ -1,0 +1,93 @@
+﻿──────────────███████──███████
+──────────████▓▓▓▓▓▓████░░░░░██
+────────██▓▓▓▓▓▓▓▓▓▓▓▓██░░░░░░██
+──────██▓▓▓▓▓▓████████████░░░░██
+────██▓▓▓▓▓▓████████████████░██
+────██▓▓████░░░░░░░░░░░░██████
+──████████░░░░░░██░░██░░██▓▓▓▓██
+──██░░████░░░░░░██░░██░░██▓▓▓▓██
+██░░░░██████░░░░░░░░░░░░░░██▓▓██
+██░░░░░░██░░░░██░░░░░░░░░░██▓▓██
+──██░░░░░░░░░███████░░░░██████
+────████░░░░░░░███████████▓▓██
+──────██████░░░░░░░░░░██▓▓▓▓██
+────██▓▓▓▓██████████████▓▓██
+──██▓▓▓▓▓▓▓▓████░░░░░░████
+████▓▓▓▓▓▓▓▓██░░░░░░░░░░██
+████▓▓▓▓▓▓▓▓██░░░░░░░░░░██
+██████▓▓▓▓▓▓▓▓██░░░░░░████████
+──██████▓▓▓▓▓▓████████████████
+────██████████████████████▓▓▓▓██
+──██▓▓▓▓████████████████▓▓▓▓▓▓██
+████▓▓██████████████████▓▓▓▓▓▓██
+██▓▓▓▓██████████████████▓▓▓▓▓▓██
+██▓▓▓▓██████████──────██▓▓▓▓████
+██▓▓▓▓████──────────────██████ 
+──████
+
+
+	Guide de préparation Software de la SuperSwag
+
+	Version: 2.2
+	Date: 03/2015
+	Contact: contact@evolya.fr
+	RetroPie version: 2.6
+
+
+#
+##
+### (1) Préparation de la carte SD (sur un pc doté d'un port SD)
+##
+#
+
+Formatter la carte SD avec SDFormatter, avec formattage FULL (Erase) autoAdjustment=OFF
+Dans Win32 Disk Imager, charger le fichier .IMG de RetroPie et cliquer sur WRITE
+
+#
+##
+### (2) Configuration de l'OS Rasbian
+##
+#
+
+Pour quitter l'application RetroPie, utiliser la touche F4 du clavier
+
+Executer: sudo raspi-config
+Selectionner le choix 1 Extend Filesystem
+Selectionner la choix 4 Internationalisation Options
+	Choix I1 Select Local
+		Retirer en_GB.UTF8
+		Ajouter fr_FR.UTF8
+	Choix I2 Select Timezone
+		Europe
+		Paris
+	Choix I3 Keyboard Layout
+		Generic 105-key (intl) PC
+		Keyboard layout: other
+		French
+		French
+		The default for the keyboard layout
+		No compose key
+		Yes
+	Choix 7 Overclocker
+		Pi2 (1000Mhz)
+		
+#
+##
+### (3) Configuration sur la Raspberry
+##
+#
+
+Copier le répertoire Config dans /home/pi/RetroPie/
+Executer : cd Config/
+Executer : chmod +x ./install.sh
+Executer : sudo ./install.sh
+
+#
+##
+###  Autre
+##
+#
+
+Quitter emulation station : F4
+Relancer emulation station : entrer 'emulationstation' dans la console
+Script de configuration des manettes : /opt/retropie/emulators/retroarch/retroarch-joyconfig
