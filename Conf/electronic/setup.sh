@@ -1,17 +1,15 @@
 #!/bin/sh
 
-cp ./superswag.sh /home/pi/superswag.sh
-sudo chmod a+x /home/pi/superswag.sh
+echo "Copy GPIO scripts..."
+cp ./gpio-rgbled.sh /home/pi/gpio-rgbled.sh
+sudo chmod a+x /home/pi/gpio-rgbled.sh
+cp ./gpio-button.sh /home/pi/gpio-button.sh
+sudo chmod a+x /home/pi/gpio-button.sh
 
-# Ajouter à /etc/rc.local les lignes:
-#		/bin/sh /home/pi/superswag.sh start
-#		/bin/sh /home/pi/superswag.sh red
-
-#sudo cp ./superswag /etc/init.d/superswag
-
-#sudo chmod a+x /etc/init.d/superswag
-
-#sudo update-rc.d superswag defaults
+echo "Setup boot behavior..."
+sudo cp ./superswag.sh /etc/init.d/superswag.sh
+sudo chmod a+x /etc/init.d/superswag.sh
+sudo update-rc.d superswag.sh defaults
 
 # Remove: sudo update-rc.d superswag remove
 # Alternative: sudo insserv superswag

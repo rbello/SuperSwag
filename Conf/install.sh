@@ -7,7 +7,6 @@ chown pi:pi /home/pi/RetroPie/Saves
 
 # Configuration des manettes Xbox
 apt-get install xboxdrv 1> /dev/null
-cp -f ./rc.local /etc/rc.local
 cp -f ./org.seul.Xboxdrv.conf /etc/dbus-1/org.seul.Xboxdrv.conf
 chown root:root /etc/dbus-1/org.seul.Xboxdrv.conf
 cp -f ./system.conf /etc/dbus-1/system.conf
@@ -34,6 +33,13 @@ rm /home/pi/RetroPie/roms/amiga/Start.txt 2> /dev/null
 rm /home/pi/RetroPie/roms/apple2/Start.txt 2> /dev/null
 rm /home/pi/RetroPie/roms/macintosh/Start.txt 2> /dev/null
 rm "/home/pi/RetroPie/roms/pc/Start DOSBox.sh" 2> /dev/null
+
+# On installe la gestion électronique
+sudo chmod +x ./electronic/setup.sh
+sudo ./electronic/setup.sh
+
+# Script au lancement
+cp -f ./rc.local /etc/rc.local
 
 tput setaf 2 bold
 echo "Done"

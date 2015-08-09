@@ -17,27 +17,10 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
+# Remove unused library
 sudo rmmod xpad
 
-#xboxdrv --trigger-as-button --wid 0 --led 2 --deadzone 4000 --silent &
-#sleep 1
-
-#sudo rmmod xpad
-
-#xboxdrv --trigger-as-button --wid 1 --led 3 --deadzone 4000 --silent &
-#sleep 1
-
-#sudo rmmod xpad
-
-#xboxdrv --trigger-as-button --wid 2 --led 4 --deadzone 4000 --silent &
-#sleep 1
-
-#sudo rmmod xpad
-
-#xboxdrv --trigger-as-button --wid 3 --led 5 --deadzone 4000 --silent &
-
-#/usr/local/bin/xboxdrv-daemon.py -v -x /usr/local/bin/xboxdrv -- --deadzone 4000 --trigger-as-button -D --silent &
-
+# Startup Xbox Controllers deamon
 sudo xboxdrv --daemon \
 	--dbus system \
 	--detach \
@@ -62,4 +45,12 @@ sudo xboxdrv --daemon \
 	--led 5 \
 	--deadzone 4000
 
+# Log
+echo "/etc/rc.local" >> /home/pi/boot.log
+
+# GPIO behaviors
+/home/pi/gpio-rgbled.sh green
+/home/pi/gpio-button.sh &
+
+# Do not remove
 exit 0
