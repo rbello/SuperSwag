@@ -1,6 +1,6 @@
 # SuperSwag
 
-Retro gaming console in a Nintendo 64 case , based on Raspberry + RetroPi .
+Retro gaming console in a Nintendo 64 case, based on Raspberry + RetroPi.
 
 ![View](http://blog.evolya.fr/public/articles/superswag/InterieurBlur.JPG)
 
@@ -12,7 +12,7 @@ This change brings the following improvements:
 - Boot image of the Game Boy Advance emulator
 - Cleaning unstable emulators
 - Configuring RetroArch
+- LED showing activity
 
 Future developments:
-- LED showing activity
 - Electronic On / off button
