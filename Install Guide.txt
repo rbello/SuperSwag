@@ -28,10 +28,10 @@
 
 	Guide de préparation Software de la SuperSwag
 
-	Version: 2.2
-	Date: 03/2015
+	Version: 2.3
+	Date: 04/2016
 	Contact: contact@evolya.fr
-	RetroPie version: 2.6
+	RetroPie version: 3.7
 
 
 #
@@ -53,11 +53,11 @@ Pour quitter l'application RetroPie, utiliser la touche F4 du clavier
 
 Executer: sudo raspi-config
 Selectionner le choix 1 Extend Filesystem
-Selectionner la choix 4 Internationalisation Options
-	Choix I1 Select Local
+Selectionner la choix 5 Internationalisation Options
+	Choix I1 Change Local
 		Retirer en_GB.UTF8
 		Ajouter fr_FR.UTF8
-	Choix I2 Select Timezone
+	Choix I2 Change Timezone
 		Europe
 		Paris
 	Choix I3 Keyboard Layout
@@ -68,7 +68,7 @@ Selectionner la choix 4 Internationalisation Options
 		The default for the keyboard layout
 		No compose key
 		Yes
-	Choix 7 Overclocker
+	Choix 8 Overclock
 		Pi2 (1000Mhz)
 		
 #
